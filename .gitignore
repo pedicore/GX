@@ -1,2 +1,32 @@
-/build
-/vscode
+# CMake build files
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# Compiled files
+*.exe
+*.o
+*.obj
+*.dll
+*.a
+
+# Qt generated files
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+
+# VS Code local settings
+.vscode/
+
+# Sensitive information
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+
+# Temporary files
+*.log
+*.tmp

@@ -1,0 +1,5 @@
+C:/Users/User/Desktop/Projects C++/GX/build/CMakeFiles/GX.dir
+C:/Users/User/Desktop/Projects C++/GX/build/CMakeFiles/edit_cache.dir
+C:/Users/User/Desktop/Projects C++/GX/build/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Desktop/Projects C++/GX/build/CMakeFiles/GX_autogen_timestamp_deps.dir
+C:/Users/User/Desktop/Projects C++/GX/build/CMakeFiles/GX_autogen.dir

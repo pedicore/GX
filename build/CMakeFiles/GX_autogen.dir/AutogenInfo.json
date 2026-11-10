@@ -287,6 +287,16 @@
 	"SETTINGS_FILE" : "C:/Users/User/Desktop/Projects C++/GX/build/CMakeFiles/GX_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/User/Desktop/Projects C++/GX/src/PasswordManager.cpp",
+			"mU",
+			null
+		],
+		[
+			"C:/Users/User/Desktop/Projects C++/GX/src/WebViewManager.cpp",
+			"mU",
+			null
+		],
 		[ "C:/Users/User/Desktop/Projects C++/GX/src/main.cpp", "mU", null ]
 	],
 	"UIC_OPTIONS" : [],

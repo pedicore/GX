@@ -154,6 +154,54 @@ GX_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX_autogen.dir\build.make CMakeFiles/GX_autogen.dir/build
 .PHONY : GX_autogen/fast
 
+src/PasswordManager.obj: src/PasswordManager.cpp.obj
+.PHONY : src/PasswordManager.obj
+
+# target to build an object file
+src/PasswordManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/PasswordManager.cpp.obj
+.PHONY : src/PasswordManager.cpp.obj
+
+src/PasswordManager.i: src/PasswordManager.cpp.i
+.PHONY : src/PasswordManager.i
+
+# target to preprocess a source file
+src/PasswordManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/PasswordManager.cpp.i
+.PHONY : src/PasswordManager.cpp.i
+
+src/PasswordManager.s: src/PasswordManager.cpp.s
+.PHONY : src/PasswordManager.s
+
+# target to generate assembly for a file
+src/PasswordManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/PasswordManager.cpp.s
+.PHONY : src/PasswordManager.cpp.s
+
+src/WebViewManager.obj: src/WebViewManager.cpp.obj
+.PHONY : src/WebViewManager.obj
+
+# target to build an object file
+src/WebViewManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/WebViewManager.cpp.obj
+.PHONY : src/WebViewManager.cpp.obj
+
+src/WebViewManager.i: src/WebViewManager.cpp.i
+.PHONY : src/WebViewManager.i
+
+# target to preprocess a source file
+src/WebViewManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/WebViewManager.cpp.i
+.PHONY : src/WebViewManager.cpp.i
+
+src/WebViewManager.s: src/WebViewManager.cpp.s
+.PHONY : src/WebViewManager.s
+
+# target to generate assembly for a file
+src/WebViewManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/WebViewManager.cpp.s
+.PHONY : src/WebViewManager.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -189,6 +237,12 @@ help:
 	@echo ... GX_autogen
 	@echo ... GX_autogen_timestamp_deps
 	@echo ... GX
+	@echo ... src/PasswordManager.obj
+	@echo ... src/PasswordManager.i
+	@echo ... src/PasswordManager.s
+	@echo ... src/WebViewManager.obj
+	@echo ... src/WebViewManager.i
+	@echo ... src/WebViewManager.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

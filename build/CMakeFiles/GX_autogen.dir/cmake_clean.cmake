@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/GX_autogen"
-  "GX_autogen/include/UI_Forms/ui_MainWindow.h"
   "GX_autogen/timestamp"
 )
 

@@ -7,10 +7,12 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS "${CMAKE_CURRENT_SOURCE_DIR}/UI_Forms")
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(GX 
     src/main.cpp
-    UI_Forms/MainWindow.ui)
+    src/WebViewManager.cpp
+    src/PasswordManager.cpp)
 
 
 target_include_directories(GX PRIVATE include)
@@ -18,7 +20,7 @@ target_link_libraries(GX PRIVATE Qt6::Widgets)
 
 
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 
 
 

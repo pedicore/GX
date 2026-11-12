@@ -39,5 +39,5 @@ void set_notes(const std::string &set_notes);
 bool file_exists() const;
 bool is_file() const;
 bool is_folder() const;
-bool file_exists();
+
 };

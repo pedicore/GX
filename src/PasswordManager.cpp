@@ -1,12 +1,12 @@
 #include "PasswordManager.h"
+
 #include <string>
 #include <chrono>
 #include <ctime>
 #include <sstream>
 #include <iomanip>
 #include <filesystem>
-#include <fstream>
-
+#include <system_error>
 
 
 Passwordinfo::Passwordinfo
@@ -27,10 +27,17 @@ auto now_time =std::chrono::system_clock::now();
 std::time_t raw_time =std::chrono::system_clock::to_time_t(now_time);
     
     std::tm local_time{};
-    localtime_s(&local_time, &raw_time);
+
+if (localtime_s(&local_time, &raw_time) != 0)
+{
+    date_of_creation = "Unknown";
+}
+else
+{
     std::ostringstream dateStream;
     dateStream << std::put_time(&local_time, "%Y-%m-%d %H:%M:%S");
     date_of_creation = dateStream.str();
+}
 }
 //getters
 std::string Passwordinfo::get_date()const{
@@ -65,8 +72,9 @@ void Passwordinfo::set_notes(const std::string &set_notes){
 
 //other - functions
 std::string Passwordinfo::generate_id(){
-    std::string id_alphabet_pool = "0123456789ABCDEFGHIJKLMNOPQRSTUVwXYZabcdefghijklmnopqrstuvwxyz";
-    std::string id_generated ;
+    std::string id_alphabet_pool =
+    "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    std::string id_generated;
     for (int i = 0;  i<12; i++)
     {   
        int n = std::rand() % 62;       
@@ -76,34 +84,35 @@ std::string Passwordinfo::generate_id(){
 }
 bool Passwordinfo::file_exists() const
 {
-    if (!std::filesystem::exists(filepath))
-    {
-        return false ;
-    }
-    return true; 
-}
-bool Passwordinfo::is_file()const {
-    if (!std::filesystem::is_regular_file(filepath))
-    {
-        return false;
-    }   
-    return true; 
-}
-bool Passwordinfo::is_folder()const{
-    if (!std::filesystem::is_directory(filepath))
-    {
-        return false;
-    }   
-    return true;
-}
-bool Passwordinfo::file_exists(){
     std::error_code ec;
-    std::filesystem::exists(filepath , ec);
+    bool result = std::filesystem::exists(filepath , ec);
     if (ec)
     {
-        std::cout <<"error :"<< ec.message() ; 
+        return false; 
     }
+    return result; 
 }
+bool Passwordinfo::is_file() const
+{
+    std::error_code ec;
+    bool result = std::filesystem::is_regular_file(filepath, ec);
+    if (ec)
+    {
+        return false;
+    }
+    return result;
+}
+bool Passwordinfo::is_folder() const
+{
+    std::error_code ec;
+    bool result = std::filesystem::is_directory(filepath, ec);
+    if (ec)
+    {
+        return false;
+    }
+    return result;
+}
+
 
 
 

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "GX_autogen/timestamp" "custom" "GX_autogen/deps"
+  "C:/Users/User/Desktop/Projects C++/GX/src/GXRecordManager.cpp" "CMakeFiles/GX.dir/src/GXRecordManager.cpp.obj" "gcc" "CMakeFiles/GX.dir/src/GXRecordManager.cpp.obj.d"
   "C:/Users/User/Desktop/Projects C++/GX/src/PasswordManager.cpp" "CMakeFiles/GX.dir/src/PasswordManager.cpp.obj" "gcc" "CMakeFiles/GX.dir/src/PasswordManager.cpp.obj.d"
   "C:/Users/User/Desktop/Projects C++/GX/src/WebViewManager.cpp" "CMakeFiles/GX.dir/src/WebViewManager.cpp.obj" "gcc" "CMakeFiles/GX.dir/src/WebViewManager.cpp.obj.d"
   "C:/Users/User/Desktop/Projects C++/GX/src/main.cpp" "CMakeFiles/GX.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GX.dir/src/main.cpp.obj.d"

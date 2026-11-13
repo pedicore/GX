@@ -12,7 +12,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(GX 
     src/main.cpp
     src/WebViewManager.cpp
-    src/PasswordManager.cpp)
+    src/PasswordManager.cpp
+    src/GXRecordManager.cpp)
 
 
 target_include_directories(GX PRIVATE include)

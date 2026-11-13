@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GX_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/GX_autogen.dir/ParseCache.txt"
   "GX_autogen"
+  "CMakeFiles/GX.dir/src/GXRecordManager.cpp.obj"
+  "CMakeFiles/GX.dir/src/GXRecordManager.cpp.obj.d"
   "CMakeFiles/GX.dir/src/PasswordManager.cpp.obj"
   "CMakeFiles/GX.dir/src/PasswordManager.cpp.obj.d"
   "CMakeFiles/GX.dir/src/WebViewManager.cpp.obj"

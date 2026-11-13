@@ -154,6 +154,30 @@ GX_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX_autogen.dir\build.make CMakeFiles/GX_autogen.dir/build
 .PHONY : GX_autogen/fast
 
+src/GXRecordManager.obj: src/GXRecordManager.cpp.obj
+.PHONY : src/GXRecordManager.obj
+
+# target to build an object file
+src/GXRecordManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/GXRecordManager.cpp.obj
+.PHONY : src/GXRecordManager.cpp.obj
+
+src/GXRecordManager.i: src/GXRecordManager.cpp.i
+.PHONY : src/GXRecordManager.i
+
+# target to preprocess a source file
+src/GXRecordManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/GXRecordManager.cpp.i
+.PHONY : src/GXRecordManager.cpp.i
+
+src/GXRecordManager.s: src/GXRecordManager.cpp.s
+.PHONY : src/GXRecordManager.s
+
+# target to generate assembly for a file
+src/GXRecordManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GX.dir\build.make CMakeFiles/GX.dir/src/GXRecordManager.cpp.s
+.PHONY : src/GXRecordManager.cpp.s
+
 src/PasswordManager.obj: src/PasswordManager.cpp.obj
 .PHONY : src/PasswordManager.obj
 
@@ -237,6 +261,9 @@ help:
 	@echo ... GX_autogen
 	@echo ... GX_autogen_timestamp_deps
 	@echo ... GX
+	@echo ... src/GXRecordManager.obj
+	@echo ... src/GXRecordManager.i
+	@echo ... src/GXRecordManager.s
 	@echo ... src/PasswordManager.obj
 	@echo ... src/PasswordManager.i
 	@echo ... src/PasswordManager.s

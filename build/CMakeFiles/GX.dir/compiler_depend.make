@@ -1252,6 +1252,9 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
 CMakeFiles/GX.dir/src/main.cpp.obj: C:/Users/User/Desktop/Projects\ C++/GX/src/main.cpp \
   C:/Users/User/Desktop/Projects\ C++/GX/include/GXRecordManager.h \
   C:/Users/User/Desktop/Projects\ C++/GX/include/PasswordManager.h \
+  C:/Users/User/Desktop/Projects\ C++/GX/include/WebViewManager.h \
+  C:/msys64/ucrt64/include/EventToken.h \
+  C:/msys64/ucrt64/include/WebView2.h \
   C:/msys64/ucrt64/include/_bsd_types.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \

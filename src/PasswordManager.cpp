@@ -9,7 +9,7 @@
 #include <system_error>
 
 
-Passwordinfo::Passwordinfo
+PasswordManager::PasswordManager
     (
     std::string const &p 
     , std::string const &n 
@@ -40,19 +40,19 @@ else
 }
 }
 //getters
-std::string Passwordinfo::get_date()const{
+std::string PasswordManager::get_date()const{
     return date_of_creation;
 }
-std::string Passwordinfo::get_title()const{
+std::string PasswordManager::get_title()const{
     return title;
 }
-std::string Passwordinfo::get_id()const{
+std::string PasswordManager::get_id()const{
     return pass_id;
 }
-std::string Passwordinfo::get_notes()const{
+std::string PasswordManager::get_notes()const{
     return Notes; 
 }
-std::string Passwordinfo::get_filename() const{
+std::string PasswordManager::get_filename() const{
     std::filesystem::path pathobj (filepath); 
     std::string file_name = pathobj.filename().string();
     
@@ -60,18 +60,18 @@ std::string Passwordinfo::get_filename() const{
 }
 
 //setters
-std::string Passwordinfo::get_filepath() const{
+std::string PasswordManager::get_filepath() const{
     return filepath;
 }
-void Passwordinfo::set_title(const std::string &set_title){   
+void PasswordManager::set_title(const std::string &set_title){   
     this->title= set_title;
 }
-void Passwordinfo::set_notes(const std::string &set_notes){
+void PasswordManager::set_notes(const std::string &set_notes){
     this->Notes = set_notes; 
 }
 
 //other - functions
-std::string Passwordinfo::generate_id(){
+std::string PasswordManager::generate_id(){
     std::string id_alphabet_pool =
     "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     std::string id_generated;
@@ -82,7 +82,7 @@ std::string Passwordinfo::generate_id(){
     }
     return id_generated; 
 }
-bool Passwordinfo::file_exists() const
+bool PasswordManager::file_exists() const
 {
     std::error_code ec;
     bool result = std::filesystem::exists(filepath , ec);
@@ -92,7 +92,7 @@ bool Passwordinfo::file_exists() const
     }
     return result; 
 }
-bool Passwordinfo::is_file() const
+bool PasswordManager::is_file() const
 {
     std::error_code ec;
     bool result = std::filesystem::is_regular_file(filepath, ec);
@@ -102,7 +102,7 @@ bool Passwordinfo::is_file() const
     }
     return result;
 }
-bool Passwordinfo::is_folder() const
+bool PasswordManager::is_folder() const
 {
     std::error_code ec;
     bool result = std::filesystem::is_directory(filepath, ec);

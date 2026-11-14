@@ -1,10 +1,11 @@
 #include "GXRecordManager.h"
+#include "PasswordManager.h"
 #include <iostream> 
 #include <vector>
 
 
 
-void GXRecordManager::add_record(const Passwordinfo &records){
+void GXRecordManager::add_record(const PasswordManager &records){
 pass_records.push_back(records);
 }
 
@@ -38,4 +39,15 @@ bool GXRecordManager::remove_record(const std::string& id)
         }
     }
     return false;
+}
+bool GXRecordManager::update_record(const std::string &id , const std::string &new_title){
+    for (auto it = pass_records.begin(); it != pass_records.end(); ++it){
+        if (it->get_id() == id)
+        {
+            it->set_title(new_title);
+
+            return true ; 
+        }
+    }
+    return false; 
 }

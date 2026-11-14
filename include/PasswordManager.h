@@ -4,7 +4,7 @@
 #include <windows.h>
 
 
-class Passwordinfo{
+class PasswordManager{
 private:
 std::string  password; 
 std::string  Notes; //
@@ -18,7 +18,7 @@ std::string  date_of_creation; //
 std::string generate_id();
 public:
 
-Passwordinfo(
+PasswordManager(
     std::string const &p 
     ,std::string const &n 
     ,std::string const &file_p 

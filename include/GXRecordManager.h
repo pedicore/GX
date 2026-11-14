@@ -7,14 +7,15 @@ class GXRecordManager
 private:
 
 
-std::vector <Passwordinfo> pass_records;
+std::vector <PasswordManager> pass_records;
 public:
     
 void find_record(const std::string &rec)const; 
-void add_record(const Passwordinfo &records);
+void add_record(const PasswordManager &records);
 std::size_t getRecordCount()const;
 bool  remove_record(const std::string &id);
-   
+bool update_record(const std::string &id , const std::string &new_title);
+
     
 
 

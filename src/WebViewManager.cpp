@@ -2,44 +2,28 @@
 #include <string>
 #include <windows.h>
 bool WebViewManager:: loadLibrary (std::wstring lib_load){
-
     if (lib_handler !=nullptr )
     {
         return true;
     }
-
-
-lib_handler = LoadLibraryW(lib_load.c_str());
-    
-    
+lib_handler = LoadLibraryW(lib_load.c_str());   
     if (lib_handler == nullptr)
     {
         return false;
     }
-    
-
-    return true;
-    
-    
+    return true;   
 }
 
 
 WebViewManager::~WebViewManager(){
-
     if (lib_handler != nullptr)
     {
-        FreeLibrary(lib_handler);
-        
-    }
-    
+        FreeLibrary(lib_handler);   
+    }  
     lib_handler = nullptr; 
-
-
-
 }
 
 bool  WebViewManager::resolveFunctions(){
-
     if(lib_handler ==nullptr){
         return false; 
         
@@ -58,5 +42,4 @@ bool  WebViewManager::resolveFunctions(){
     }
     
     return true; 
-
 }

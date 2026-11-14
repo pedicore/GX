@@ -632,4 +632,8 @@ CMakeFiles/GX.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/sec_api/stralign_s.h \
  C:/msys64/ucrt64/include/winsvc.h C:/msys64/ucrt64/include/mcx.h \
  C:/msys64/ucrt64/include/imm.h \
- C:/Users/User/Desktop/PROJEC~1/GX/include/GXRecordManager.h
+ C:/Users/User/Desktop/PROJEC~1/GX/include/GXRecordManager.h \
+ C:/Users/User/Desktop/PROJEC~1/GX/include/WebViewManager.h \
+ C:/msys64/ucrt64/include/WebView2.h C:/msys64/ucrt64/include/rpc.h \
+ C:/msys64/ucrt64/include/rpcndr.h C:/msys64/ucrt64/include/objidl.h \
+ C:/msys64/ucrt64/include/oaidl.h C:/msys64/ucrt64/include/EventToken.h

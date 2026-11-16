@@ -1,50 +1,66 @@
-#include <iostream> 
-#include <string> 
+
 #include <QApplication>
-#include <QMainWindow>
-#include "PasswordManager.h"
-#include "GXRecordManager.h"
+#include <QWidget>
+#include <QVBoxLayout>
+
+#include <windows.h>
+#include <iostream>
+
 #include "WebViewManager.h"
 
+int main(int argc, char* argv[])
+{
+    HRESULT comResult = CoInitializeEx(
+        nullptr,
+        COINIT_APARTMENTTHREADED
+    );
 
-using namespace std;
+    if (FAILED(comResult))
+    {
+        std::cout << "COM initialization failed: 0x"
+                  << std::hex
+                  << static_cast<unsigned long>(comResult)
+                  << std::dec << '\n';
+        return 1;
+    }
 
-int main(int argc , char* argv[]){
+    int exitCode = 1;
 
-QApplication app (argc , argv );
-QMainWindow window ; 
-GXRecordManager manager;
-WebViewManager web_view;
-window.show(); 
+    {
+        QApplication app(argc, argv);
 
+        QWidget window;
+        window.setWindowTitle("GX - WebView2 Test");
+        window.resize(900, 600);
 
-cout<<web_view.loadLibrary(L"WebView2Loader.dll")<<"\n";
-cout<<web_view.resolveFunctions()<<"\n";
+        auto* layout = new QVBoxLayout(&window);
+        layout->setContentsMargins(0, 0, 0, 0);
 
+        QWidget browserHost;
+        layout->addWidget(&browserHost);
 
-PasswordManager file("1234", "Test", "C:/Windows/notepad.exe", "File");
-PasswordManager folder("1234", "Test", "C:/Windows", "Folder");
-PasswordManager missing("1234", "Test", "C:/GX_TEST_NONEXISTENT_12345.txt", "Missing");
+        window.show();
 
+        WebViewManager web_view;
 
+        if (!web_view.loadLibrary(L"WebView2Loader.dll"))
+        {
+            std::cout << "Cannot load WebView2Loader.dll\n";
+        }
+        else if (!web_view.resolveFunctions())
+        {
+            std::cout << "Cannot resolve WebView2 function\n";
+        }
+        else if (!web_view.createEnvironment(
+                     reinterpret_cast<HWND>(browserHost.winId())))
+        {
+            std::cout << "Cannot start WebView2\n";
+        }
 
+        exitCode = app.exec();
+    }
 
+    CoUninitialize();
 
-std::cout << "Initial Records: "
-          << manager.getRecordCount() << '\n';
-
-PasswordManager pass1("1234", "Test 1", "D:/file1.txt", "File 1");
-PasswordManager pass2("5678", "Test 2", "D:/file2.txt", "File 2");
-
-manager.add_record(pass1);
-manager.add_record(pass2);
-
-
-
-
-
-
-
-
-   return  app.exec(); 
+    return exitCode;
 }

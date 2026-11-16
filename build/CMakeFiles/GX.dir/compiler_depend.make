@@ -900,6 +900,8 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/c++/16.1.0/bit \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/alloc_traits.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/allocator.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/basic_ios.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/basic_ios.tcc \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/basic_string.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/basic_string.tcc \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/char_traits.h \
@@ -907,26 +909,40 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/c++/16.1.0/bits/concept_check.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/cpp_type_traits.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/cxxabi_forced.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/cxxabi_init_exception.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/erase_if.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/exception.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/exception_defines.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/exception_ptr.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/functexcept.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/functional_hash.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/hash_bytes.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/invoke.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/ios_base.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/istream.tcc \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/locale_classes.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/locale_classes.tcc \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/locale_facets.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/locale_facets.tcc \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/localefwd.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/memory_resource.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/memoryfwd.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/move.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/nested_exception.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/new_allocator.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/new_except.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/new_throw.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/ostream.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/ostream.tcc \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/ostream_insert.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/ostream_print.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/postypes.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/predefined_ops.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/ptr_traits.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/range_access.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/requires_hosted.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/std_abs.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/stdexcept_except.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stdexcept_throw.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stdexcept_throwfwd.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_algobase.h \
@@ -936,6 +952,8 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_iterator_base_funcs.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_iterator_base_types.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_pair.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/streambuf.tcc \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/streambuf_iterator.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/string_view.tcc \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stringfwd.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/uses_allocator.h \
@@ -950,25 +968,42 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/c++/16.1.0/cstdio \
   C:/msys64/ucrt64/include/c++/16.1.0/cstdlib \
   C:/msys64/ucrt64/include/c++/16.1.0/cwchar \
+  C:/msys64/ucrt64/include/c++/16.1.0/cwctype \
   C:/msys64/ucrt64/include/c++/16.1.0/debug/assertions.h \
   C:/msys64/ucrt64/include/c++/16.1.0/debug/debug.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/exception \
   C:/msys64/ucrt64/include/c++/16.1.0/ext/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/ext/atomicity.h \
   C:/msys64/ucrt64/include/c++/16.1.0/ext/numeric_traits.h \
   C:/msys64/ucrt64/include/c++/16.1.0/ext/string_conversions.h \
   C:/msys64/ucrt64/include/c++/16.1.0/ext/type_traits.h \
   C:/msys64/ucrt64/include/c++/16.1.0/initializer_list \
+  C:/msys64/ucrt64/include/c++/16.1.0/ios \
   C:/msys64/ucrt64/include/c++/16.1.0/iosfwd \
+  C:/msys64/ucrt64/include/c++/16.1.0/iostream \
+  C:/msys64/ucrt64/include/c++/16.1.0/istream \
   C:/msys64/ucrt64/include/c++/16.1.0/new \
+  C:/msys64/ucrt64/include/c++/16.1.0/ostream \
   C:/msys64/ucrt64/include/c++/16.1.0/pstl/pstl_config.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/stdexcept \
   C:/msys64/ucrt64/include/c++/16.1.0/stdlib.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/streambuf \
   C:/msys64/ucrt64/include/c++/16.1.0/string \
   C:/msys64/ucrt64/include/c++/16.1.0/string_view \
+  C:/msys64/ucrt64/include/c++/16.1.0/system_error \
   C:/msys64/ucrt64/include/c++/16.1.0/tuple \
   C:/msys64/ucrt64/include/c++/16.1.0/type_traits \
+  C:/msys64/ucrt64/include/c++/16.1.0/typeinfo \
+  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
   C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
   C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++locale.h \
   C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/gthr.h \
   C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/os_defines.h \
   C:/msys64/ucrt64/include/cderr.h \
   C:/msys64/ucrt64/include/cguid.h \
@@ -980,6 +1015,7 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/consoleapi3.h \
   C:/msys64/ucrt64/include/corecrt.h \
   C:/msys64/ucrt64/include/corecrt_memory.h \
+  C:/msys64/ucrt64/include/corecrt_startup.h \
   C:/msys64/ucrt64/include/corecrt_stdio_config.h \
   C:/msys64/ucrt64/include/corecrt_wconio.h \
   C:/msys64/ucrt64/include/corecrt_wctype.h \
@@ -1038,6 +1074,7 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/oleidl.h \
   C:/msys64/ucrt64/include/playsoundapi.h \
   C:/msys64/ucrt64/include/poppack.h \
+  C:/msys64/ucrt64/include/process.h \
   C:/msys64/ucrt64/include/processenv.h \
   C:/msys64/ucrt64/include/processthreadsapi.h \
   C:/msys64/ucrt64/include/processtopologyapi.h \
@@ -1056,6 +1093,11 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/pshpack2.h \
   C:/msys64/ucrt64/include/pshpack4.h \
   C:/msys64/ucrt64/include/pshpack8.h \
+  C:/msys64/ucrt64/include/pthread.h \
+  C:/msys64/ucrt64/include/pthread_compat.h \
+  C:/msys64/ucrt64/include/pthread_signal.h \
+  C:/msys64/ucrt64/include/pthread_time.h \
+  C:/msys64/ucrt64/include/pthread_unistd.h \
   C:/msys64/ucrt64/include/realtimeapiset.h \
   C:/msys64/ucrt64/include/reason.h \
   C:/msys64/ucrt64/include/rpc.h \
@@ -1068,17 +1110,20 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/rpcnterr.h \
   C:/msys64/ucrt64/include/rpcsal.h \
   C:/msys64/ucrt64/include/sal.h \
+  C:/msys64/ucrt64/include/sched.h \
   C:/msys64/ucrt64/include/sdkddkver.h \
   C:/msys64/ucrt64/include/sec_api/stdio_s.h \
   C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
   C:/msys64/ucrt64/include/sec_api/stralign_s.h \
   C:/msys64/ucrt64/include/sec_api/string_s.h \
+  C:/msys64/ucrt64/include/sec_api/sys/timeb_s.h \
   C:/msys64/ucrt64/include/sec_api/wchar_s.h \
   C:/msys64/ucrt64/include/sec_api/wconio_s.h \
   C:/msys64/ucrt64/include/securityappcontainer.h \
   C:/msys64/ucrt64/include/securitybaseapi.h \
   C:/msys64/ucrt64/include/servprov.h \
   C:/msys64/ucrt64/include/shellapi.h \
+  C:/msys64/ucrt64/include/signal.h \
   C:/msys64/ucrt64/include/specstrings.h \
   C:/msys64/ucrt64/include/stdarg.h \
   C:/msys64/ucrt64/include/stddef.h \
@@ -1089,10 +1134,13 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/stringapiset.h \
   C:/msys64/ucrt64/include/swprintf.inl \
   C:/msys64/ucrt64/include/synchapi.h \
+  C:/msys64/ucrt64/include/sys/timeb.h \
+  C:/msys64/ucrt64/include/sys/types.h \
   C:/msys64/ucrt64/include/sysinfoapi.h \
   C:/msys64/ucrt64/include/systemtopologyapi.h \
   C:/msys64/ucrt64/include/threadpoolapiset.h \
   C:/msys64/ucrt64/include/threadpoollegacyapiset.h \
+  C:/msys64/ucrt64/include/time.h \
   C:/msys64/ucrt64/include/timeapi.h \
   C:/msys64/ucrt64/include/timezoneapi.h \
   C:/msys64/ucrt64/include/tvout.h \
@@ -1103,6 +1151,7 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/include/vadefs.h \
   C:/msys64/ucrt64/include/virtdisk.h \
   C:/msys64/ucrt64/include/wchar.h \
+  C:/msys64/ucrt64/include/wctype.h \
   C:/msys64/ucrt64/include/winapifamily.h \
   C:/msys64/ucrt64/include/winbase.h \
   C:/msys64/ucrt64/include/wincon.h \
@@ -1250,8 +1299,6 @@ CMakeFiles/GX.dir/src/WebViewManager.cpp.obj: C:/Users/User/Desktop/Projects\ C+
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/xtestintrin.h
 
 CMakeFiles/GX.dir/src/main.cpp.obj: C:/Users/User/Desktop/Projects\ C++/GX/src/main.cpp \
-  C:/Users/User/Desktop/Projects\ C++/GX/include/GXRecordManager.h \
-  C:/Users/User/Desktop/Projects\ C++/GX/include/PasswordManager.h \
   C:/Users/User/Desktop/Projects\ C++/GX/include/WebViewManager.h \
   C:/msys64/ucrt64/include/EventToken.h \
   C:/msys64/ucrt64/include/WebView2.h \
@@ -1727,11 +1774,14 @@ CMakeFiles/GX.dir/src/main.cpp.obj: C:/Users/User/Desktop/Projects\ C++/GX/src/m
   C:/msys64/ucrt64/include/qt6/QtGui/qwindowdefs.h \
   C:/msys64/ucrt64/include/qt6/QtGui/qwindowdefs_win.h \
   C:/msys64/ucrt64/include/qt6/QtWidgets/QApplication \
-  C:/msys64/ucrt64/include/qt6/QtWidgets/QMainWindow \
+  C:/msys64/ucrt64/include/qt6/QtWidgets/QVBoxLayout \
+  C:/msys64/ucrt64/include/qt6/QtWidgets/QWidget \
   C:/msys64/ucrt64/include/qt6/QtWidgets/qapplication.h \
-  C:/msys64/ucrt64/include/qt6/QtWidgets/qmainwindow.h \
+  C:/msys64/ucrt64/include/qt6/QtWidgets/qboxlayout.h \
+  C:/msys64/ucrt64/include/qt6/QtWidgets/qgridlayout.h \
+  C:/msys64/ucrt64/include/qt6/QtWidgets/qlayout.h \
+  C:/msys64/ucrt64/include/qt6/QtWidgets/qlayoutitem.h \
   C:/msys64/ucrt64/include/qt6/QtWidgets/qsizepolicy.h \
-  C:/msys64/ucrt64/include/qt6/QtWidgets/qtabwidget.h \
   C:/msys64/ucrt64/include/qt6/QtWidgets/qtwidgets-config.h \
   C:/msys64/ucrt64/include/qt6/QtWidgets/qtwidgetsexports.h \
   C:/msys64/ucrt64/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -1963,6 +2013,8 @@ C:/msys64/ucrt64/include/qt6/QtWidgets/qtwidgetsglobal.h:
 C:/Users/User/Desktop/Projects\ C++/GX/src/GXRecordManager.cpp:
 
 C:/msys64/ucrt64/include/c++/16.1.0/cwctype:
+
+C:/msys64/ucrt64/include/qt6/QtWidgets/qlayoutitem.h:
 
 C:/msys64/ucrt64/include/_mingw.h:
 
@@ -2297,8 +2349,6 @@ C:/msys64/ucrt64/include/c++/16.1.0/bits/vector.tcc:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/immintrin.h:
 
 C:/msys64/ucrt64/include/c++/16.1.0/bits/version.h:
-
-C:/msys64/ucrt64/include/qt6/QtWidgets/qmainwindow.h:
 
 C:/msys64/ucrt64/include/c++/16.1.0/cctype:
 
@@ -2812,8 +2862,6 @@ C:/msys64/ucrt64/include/wow64apiset.h:
 
 C:/msys64/ucrt64/include/wtypes.h:
 
-C:/msys64/ucrt64/include/qt6/QtWidgets/qtabwidget.h:
-
 C:/msys64/ucrt64/include/wtypesbase.h:
 
 C:/msys64/ucrt64/include/c++/16.1.0/variant:
@@ -2949,6 +2997,8 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/wbnoinvdintrin.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/emmintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/enqcmdintrin.h:
+
+C:/msys64/ucrt64/include/qt6/QtWidgets/qboxlayout.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/xsavecintrin.h:
 
@@ -3252,6 +3302,8 @@ C:/msys64/ucrt64/include/qt6/QtCore/qobject_impl.h:
 
 C:/msys64/ucrt64/include/qt6/QtCore/qobjectdefs.h:
 
+C:/msys64/ucrt64/include/qt6/QtWidgets/qgridlayout.h:
+
 C:/msys64/ucrt64/include/qt6/QtCore/qobjectdefs_impl.h:
 
 C:/msys64/ucrt64/include/qt6/QtCore/qoverload.h:
@@ -3308,6 +3360,8 @@ C:/msys64/ucrt64/include/qt6/QtCore/qtmetamacros.h:
 
 C:/msys64/ucrt64/include/qt6/QtCore/qtnoop.h:
 
+C:/msys64/ucrt64/include/qt6/QtWidgets/QWidget:
+
 C:/msys64/ucrt64/include/qt6/QtCore/qtpreprocessorsupport.h:
 
 C:/msys64/ucrt64/include/qt6/QtCore/qtversion.h:
@@ -3354,8 +3408,10 @@ C:/msys64/ucrt64/include/qt6/QtGui/qtguiglobal.h:
 
 C:/msys64/ucrt64/include/qt6/QtGui/qtransform.h:
 
-C:/msys64/ucrt64/include/qt6/QtWidgets/QMainWindow:
+C:/msys64/ucrt64/include/qt6/QtWidgets/QVBoxLayout:
 
 C:/msys64/ucrt64/include/qt6/QtWidgets/qapplication.h:
+
+C:/msys64/ucrt64/include/qt6/QtWidgets/qlayout.h:
 
 C:/msys64/ucrt64/include/qt6/QtWidgets/qtwidgets-config.h:

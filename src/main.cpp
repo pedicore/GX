@@ -5,6 +5,8 @@
 #include <windows.h>
 #include <iostream>
 
+#include "PasswordManager.h"
+#include "GXRecordManager.h"
 #include "WebViewManager.h"
 
 int main(int argc, char* argv[])
@@ -27,6 +29,87 @@ int main(int argc, char* argv[])
 
     {
         QApplication app(argc, argv);
+
+        // Day 6 - GXRecordManager Test
+
+        GXRecordManager manager;
+
+        PasswordManager record1(
+            "test_pass_1",
+            "GitHub account",
+            "",
+            "GitHub"
+        );
+
+        PasswordManager record2(
+            "test_pass_2",
+            "Email account",
+            "",
+            "Gmail"
+        );
+
+        PasswordManager record3(
+            "test_pass_3",
+            "Discord account",
+            "",
+            "Discord"
+        );
+
+        manager.add_record(record1);
+        manager.add_record(record2);
+        manager.add_record(record3);
+
+        std::cout << "\n=== GX Day 6 Test ===\n";
+
+        std::cout << "Total records: "
+                << manager.getRecordCount()
+                << '\n';
+        
+ //       
+    std::cout << "\n=== Find by ID Test ===\n";
+
+    std::cout << "GitHub ID: " << record1.get_id() << '\n';
+    std::cout << "Gmail ID: " << record2.get_id() << '\n';
+    std::cout << "Discord ID: " << record3.get_id() << '\n';
+
+    manager.find_record(record1.get_id());
+    manager.find_record(record2.get_id());
+    manager.find_record(record3.get_id());
+
+
+    std::cout << "\n=== Update Record Test ===\n";
+//
+    bool updated = manager.update_record(
+        record1.get_id(),
+        "GitHub - Updated"
+    );
+
+    std::cout << "Update successful: "
+            << std::boolalpha << updated << '\n';
+
+    manager.find_record(record1.get_id());
+//
+        std::cout << "\n=== Remove Record Test ===\n";
+
+    bool removed = manager.remove_record(record2.get_id());
+
+    std::cout << "Remove successful: "
+            << std::boolalpha << removed << '\n';
+
+    std::cout << "Total records after removal: "
+            << manager.getRecordCount() << '\n';
+
+    std::cout << "\nSearching for deleted record:\n";
+    manager.find_record(record2.get_id());
+
+    //
+    bool removedAgain = manager.remove_record(record2.get_id());
+
+    std::cout << "Remove again: "
+            << std::boolalpha << removedAgain << '\n';
+
+    std::cout << "Final record count: "
+            << manager.getRecordCount() << '\n';
 
         QWidget window;
         window.setWindowTitle("GX - WebView2 Test");

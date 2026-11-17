@@ -637,6 +637,8 @@ CMakeFiles/GX.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/16.1.0/istream \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/istream.tcc \
+ C:/Users/User/Desktop/PROJEC~1/GX/include/PasswordManager.h \
+ C:/Users/User/Desktop/PROJEC~1/GX/include/GXRecordManager.h \
  C:/Users/User/Desktop/PROJEC~1/GX/include/WebViewManager.h \
  C:/msys64/ucrt64/include/WebView2.h C:/msys64/ucrt64/include/rpc.h \
  C:/msys64/ucrt64/include/rpcndr.h C:/msys64/ucrt64/include/objidl.h \

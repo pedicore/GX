@@ -1,0 +1,57 @@
+
+/* Default Theme: Dark */
+:root {
+    --bg-primary: #111827;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --accent: #38bdf8;
+
+    /* Buttons */
+    --btn-bg: #273449;
+    --btn-text: #cbd5e1;
+    --btn-text-hover: #f8fafc;
+    --btn-text-active: #38bdf8;
+    --btn-hover: #334155;
+    --btn-active: #164e63;
+
+    /* Cards */
+    --card-border: #334155;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --bg-primary: #f1f5f9;
+    --bg-secondary: #ffffff;
+    --text-primary: #0f172a;
+    --accent: #2563eb;
+
+    /* Buttons */
+    --btn-bg: #e2e8f0;
+    --btn-text: #334155;
+    --btn-text-hover: #0f172a;
+    --btn-text-active: #1d4ed8;
+    --btn-hover: #cbd5e1;
+    --btn-active: #dbeafe;
+
+    /* Cards */
+    --card-border: #cbd5e1;
+}
+
+/* Midnight Theme */
+[data-theme="midnight"] {
+    --bg-primary: #090b10;
+    --bg-secondary: #161b22;
+    --text-primary: #e6edf3;
+    --accent: #0ea5e9;
+
+    /* Buttons */
+    --btn-bg: #21262d;
+    --btn-text: #c9d1d9;
+    --btn-text-hover: #ffffff;
+    --btn-text-active: #38bdf8;
+    --btn-hover: #30363d;
+    --btn-active: #0c3547;
+
+    /* Cards */
+    --card-border: #30363d;
+}

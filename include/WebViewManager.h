@@ -1,91 +1,88 @@
 
 #pragma once
 
-#include <windows.h>
 #include <WebView2.h>
+#include <windows.h>
+
+#include <memory>
 #include <string>
 
-using CreateEnvironmentFn = HRESULT (STDAPICALLTYPE *)(
-    PCWSTR,
-    PCWSTR,
-    ICoreWebView2EnvironmentOptions*,
-    ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler*
-);
+using CreateEnvironmentFn = HRESULT(STDAPICALLTYPE*)(
+    PCWSTR, PCWSTR, ICoreWebView2EnvironmentOptions*,
+    ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler*);
 
 class WebViewManager;
 
+// Callbacks may finish after shutdown begins. They check this shared state
+// before accessing the manager.
+struct WebViewCallbackState {
+  WebViewManager* owner = nullptr;
+};
+
 class EnvironmentHandler final
-    : public ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler
-{
-private:
-    volatile LONG refCount = 1;
-    WebViewManager* owner;
+    : public ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler {
+  volatile LONG refCount = 1;
+  std::shared_ptr<WebViewCallbackState> state;
 
-public:
-    explicit EnvironmentHandler(WebViewManager* manager);
-
-    HRESULT STDMETHODCALLTYPE QueryInterface(
-        REFIID riid, void** object) override;
-
-    ULONG STDMETHODCALLTYPE AddRef() override;
-    ULONG STDMETHODCALLTYPE Release() override;
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-        HRESULT errorCode,
-        ICoreWebView2Environment* environment) override;
+ public:
+  explicit EnvironmentHandler(std::shared_ptr<WebViewCallbackState> state);
+  HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, void** object) override;
+  ULONG STDMETHODCALLTYPE AddRef() override;
+  ULONG STDMETHODCALLTYPE Release() override;
+  HRESULT STDMETHODCALLTYPE
+  Invoke(HRESULT errorCode, ICoreWebView2Environment* environment) override;
 };
 
 class ControllerHandler final
-    : public ICoreWebView2CreateCoreWebView2ControllerCompletedHandler
-{
-private:
-    volatile LONG refCount = 1;
-    WebViewManager* owner;
+    : public ICoreWebView2CreateCoreWebView2ControllerCompletedHandler {
+  volatile LONG refCount = 1;
+  std::shared_ptr<WebViewCallbackState> state;
 
-public:
-    explicit ControllerHandler(WebViewManager* manager);
-
-    HRESULT STDMETHODCALLTYPE QueryInterface(
-        REFIID riid, void** object) override;
-
-    ULONG STDMETHODCALLTYPE AddRef() override;
-    ULONG STDMETHODCALLTYPE Release() override;
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-        HRESULT errorCode,
-        ICoreWebView2Controller* controller) override;
+ public:
+  explicit ControllerHandler(std::shared_ptr<WebViewCallbackState> state);
+  HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, void** object) override;
+  ULONG STDMETHODCALLTYPE AddRef() override;
+  ULONG STDMETHODCALLTYPE Release() override;
+  HRESULT STDMETHODCALLTYPE
+  Invoke(HRESULT errorCode, ICoreWebView2Controller* controller) override;
 };
 
-class WebViewManager
-{
-private:
-    HMODULE lib_handler = nullptr;
-    CreateEnvironmentFn func_address = nullptr;
+class WebMessageHandler final
+    : public ICoreWebView2WebMessageReceivedEventHandler {
+  volatile LONG refCount = 1;
+  std::shared_ptr<WebViewCallbackState> state;
 
-    HWND parentWindow = nullptr;
+ public:
+  explicit WebMessageHandler(std::shared_ptr<WebViewCallbackState> state);
+  HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, void** object) override;
+  ULONG STDMETHODCALLTYPE AddRef() override;
+  ULONG STDMETHODCALLTYPE Release() override;
+  HRESULT STDMETHODCALLTYPE
+  Invoke(ICoreWebView2* sender,
+         ICoreWebView2WebMessageReceivedEventArgs* args) override;
+};
 
-    ICoreWebView2Environment* environment = nullptr;
-    ICoreWebView2Controller* controller = nullptr;
-    ICoreWebView2* webview = nullptr;
+class WebViewManager {
+  HMODULE lib_handler = nullptr;
+  CreateEnvironmentFn func_address = nullptr;
+  HWND parentWindow = nullptr;
+  ICoreWebView2Environment* environment = nullptr;
+  ICoreWebView2Controller* controller = nullptr;
+  ICoreWebView2* webview = nullptr;
+  EventRegistrationToken messageToken{};
+  bool messageRegistered = false;
+  std::shared_ptr<WebViewCallbackState> callbackState;
 
-public:
-    WebViewManager() = default;
-    ~WebViewManager();
+ public:
+  WebViewManager();
+  ~WebViewManager();
+  WebViewManager(const WebViewManager&) = delete;
+  WebViewManager& operator=(const WebViewManager&) = delete;
 
-    WebViewManager(const WebViewManager&) = delete;
-    WebViewManager& operator=(const WebViewManager&) = delete;
-
-    bool loadLibrary(const std::wstring& lib_load);
-    bool resolveFunctions();
-    bool createEnvironment(HWND parent);
-
-    void onEnvironmentCreated(
-        HRESULT result,
-        ICoreWebView2Environment* env);
-
-    void onControllerCreated(
-        HRESULT result,
-        ICoreWebView2Controller* ctrl);
-
-    void resize();
+  bool loadLibrary(const std::wstring& path);
+  bool resolveFunctions();
+  bool createEnvironment(HWND parent);
+  void onEnvironmentCreated(HRESULT result, ICoreWebView2Environment* env);
+  void onControllerCreated(HRESULT result, ICoreWebView2Controller* ctrl);
+  void resize();
 };

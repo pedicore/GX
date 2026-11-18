@@ -3,6 +3,7 @@
 :root {
     --bg-primary: #111827;
     --bg-secondary: #1e293b;
+    --bg-secondary-Alpha: rgb(30, 41, 59 , 0.3) ;
     --text-primary: #f8fafc;
     --accent: #38bdf8;
 
@@ -16,6 +17,12 @@
 
     /* Cards */
     --card-border: #334155;
+
+    /* Gradient colors */
+    --gradient-color-first:#071A1F;
+    --gradient-color-second:#12343B;
+    --gradient-color-third:#0B1826;
+
 }
 
 /* Light Theme */

@@ -73,8 +73,7 @@ main {
 header {
   display: flex;
   justify-content: center;
-  
-  
+
   margin: 10px;
 }
 
@@ -131,7 +130,6 @@ nav > div {
   justify-content: center;
   padding-left: 0;
   padding-right: 0;
-  
 }
 
 /* Sidebar Toggle Icons */
@@ -153,11 +151,17 @@ nav > div {
 ======================================== */
 
 .system-card {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-secondary-Alpha);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
   border-radius: 12px;
-  padding: 20px;
+  padding: 12px;
   box-sizing: border-box;
+  min-height: 70px;
+}
+.system-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.30) ;
+  transition: 0.5s ease ;
 }
 #system-cards {
   display: grid;
@@ -167,28 +171,34 @@ nav > div {
 }
 
 .card-title {
-  font-size: 22px;
+  font-size: 16px;
   color: var(--text-primary);
 }
 
 .card-value {
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
 }
+
+/* ========================================
+   7. Charts
+======================================== */
 .chart-container {
   padding: 15px;
+  height: 180px;
 }
 .chart-container h3 {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   font-size: 1.5em;
 }
+
 .card-icon {
   background-color: var(--btn-text);
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   mask-size: contain;
   mask-repeat: no-repeat;
@@ -199,11 +209,72 @@ nav > div {
   align-items: center;
   gap: 10px;
 }
-
-
 .chart-container {
   position: relative;
   width: 100%;
-  
 }
 
+/* ========================================
+   8. Progress Circle Bar
+======================================== */
+.progress-wrapper {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 48px;
+  height: 48px;
+}
+.card-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.progress-track {
+  position: absolute;
+}
+.progress-bar {
+  position: absolute;
+}
+
+/* ========================================
+   9. Media Queries control and Responsive
+======================================== */
+@media (max-width: 690px) {
+  #system-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    padding: 15px;
+    gap: 16px;
+  }
+}
+
+/* ========================================
+   10.animated-gradien
+======================================== */
+
+.animated-gradient {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    var(--gradient-color-first) 0%,
+    var(--gradient-color-second) 50%,
+    var(--gradient-color-third) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease alternate infinite;
+  overflow: hidden;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

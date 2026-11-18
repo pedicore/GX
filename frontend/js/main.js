@@ -32,6 +32,7 @@ const cpuChart = new Chart(ctx, {
 
   options: {
     responsive: true,
+    maintainAspectRatio:false,
     animation: false,
     scales: {
       y: {

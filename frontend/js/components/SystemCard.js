@@ -1,4 +1,3 @@
-
 const systemCards = document.getElementById("system-cards");
 
 class SystemCard {
@@ -23,12 +22,61 @@ class SystemCard {
     iconElement.classList.add("card-icon");
     iconElement.style.maskImage = `url("${this.icon}")`;
 
+    //Progress bar
+    const progressWrapper = document.createElement("div");
+    const svgParent = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg",
+    );
+    const progressTrack = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle",
+    );
+    const progressBar = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle",
+    );
+    
+    const percentage = 65
+    const offset = (1 - percentage / 100 )   * 125.66
+    
+    svgParent.setAttribute("viewBox", "0 0 48 48")
+    progressTrack.setAttribute("cx", 24);
+    progressTrack.setAttribute("cy" , 24)
+    progressTrack.setAttribute("r" , 20)
+    progressTrack.setAttribute("fill" , "none")
+    progressTrack.setAttribute("stroke-width" , 4)
+    progressTrack.setAttribute("stroke" , "#374151")
+
+
+
+    progressBar.setAttribute("cx", 24);
+    progressBar.setAttribute("cy" , 24)
+    progressBar.setAttribute("r" , 20)
+    progressBar.setAttribute("fill" , "none")
+    progressBar.setAttribute("stroke-width" , 4)
+    progressBar.setAttribute("stroke" , "#38bdf8")
+    progressBar.setAttribute("stroke-dasharray" , 125.66)
+    progressBar.setAttribute("stroke-dashoffset" , offset)
+ 
+
+
+
+    cardHeader.appendChild(progressWrapper);
+    svgParent.appendChild(progressTrack);
+    svgParent.appendChild(progressBar);
+    progressWrapper.appendChild(iconElement);
+    progressWrapper.appendChild(svgParent);
+
+    progressWrapper.classList.add("progress-wrapper");
+    progressTrack.classList.add("progress-track");
+    progressBar.classList.add("progress-bar");
+
     // Card title
     const cardTitle = document.createElement("h3");
     cardTitle.classList.add("card-title");
     cardTitle.textContent = this.title;
 
-    cardHeader.appendChild(iconElement);
     cardHeader.appendChild(cardTitle);
 
     // Card value
@@ -78,11 +126,7 @@ const cardData = [
 
 // Render cards
 cardData.forEach((item) => {
-  const card = new SystemCard(
-    item.title,
-    item.value,
-    item.icon
-  );
+  const card = new SystemCard(item.title, item.value, item.icon);
 
   systemCards.appendChild(card.render());
 });

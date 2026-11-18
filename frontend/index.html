@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,9 @@
     <div class="app-layout">
         <!-- Side bar and Logo -->
         <aside class="sidebar">
-            <div class="logo"></div>
+            <div class="logo">
+
+            </div>
             <button id="sidebar-toggle">
                 <svg class="icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -65,27 +67,70 @@
                             <circle cx="12" cy="12" r="3" />
                         </svg>
                     </button>
+                    <div class="theme-section">
+                        <button id="themeBtn" class="theme-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="moon-icon" width="24" height="24"
+                                viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon preview-icon">
+                                <path
+                                    d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+                            </svg>
+
+
+                            <svg xmlns="http://www.w3.org/2000/svg" class="sun-icon" width="24" height="24"
+                                viewBox="0 0 24 24" fill="black" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun preview-icon">
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2" />
+                                <path d="M12 20v2" />
+                                <path d="m4.93 4.93 1.41 1.41" />
+                                <path d="m17.66 17.66 1.41 1.41" />
+                                <path d="M2 12h2" />
+                                <path d="M20 12h2" />
+                                <path d="m6.34 17.66-1.41 1.41" />
+                                <path d="m19.07 4.93-1.41 1.41" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </nav>
         </aside>
         <!-- Main , Header -->
         <main>
             <header>
-                <h1 class="hedearTitle">GX</h1>
+                <h1 class="hedearTitle">Dashboard</h1>
             </header>
             <div id="overview">
                 <div id="system-cards">
-                   
+
 
                 </div>
-                
-                
+
+
             </div>
             <div class="chart-container">
                 <h3>CPU Usage</h3>
-                <canvas id="cpu-chart"></canvas>
-                
+                <div class="chart-area">
+                    <canvas id="cpu-chart"></canvas>
+                </div>
+                <div class="chart-area">
+                    <h3>Ram Usage</h3>
+                    <canvas id="ram-chart"></canvas>
+                </div>
+            </div>
 
+            <div class="parent-file">
+                <div class="recent-file" id="file">
+                    <button id="activityBtn">Recent Activityes
+                        <svg xmlns="http://www.w3.org/2000/svg" id="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-down preview-icon">
+                            <path d="M12 5v14" />
+                            <path d="m19 12-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                </div>
             </div>
 
 
@@ -97,6 +142,7 @@
     <script src="js/vendor/chart.umd.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/components/SystemCard.js"></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 </html>

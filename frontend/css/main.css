@@ -7,6 +7,8 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: auto;
+  overflow-y: auto;
 }
 
 /* ========================================
@@ -51,6 +53,9 @@ button.active {
   background-color: var(--btn-active);
   color: var(--btn-text-active);
 }
+html.loading body {
+  visibility: hidden;
+}
 
 /* ========================================
    3. MAIN LAYOUT
@@ -58,22 +63,22 @@ button.active {
 
 .app-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-columns: 190px minmax(0, 1fr);
   min-height: 100vh;
 
   transition: grid-template-columns 0.3s ease;
 }
 
 main {
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: 2;
+  grid-row: 2;
   min-width: 0;
 }
 
 header {
   display: flex;
-  justify-content: center;
-
+  justify-content: start;
+  padding-left: 10px;
   margin: 10px;
 }
 
@@ -82,18 +87,22 @@ header {
 ======================================== */
 
 .sidebar {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
-  margin: 8px;
-  border-radius: 5px;
-  background-color: var(--bg-secondary);
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 8px;
+  align-self: start;
+  margin: 8px;
   padding: 5px;
-  height: 95vh;
-
-  overflow: hidden;
+  box-sizing: border-box;
+  height: calc(100vh - 25px);
+  min-width: 0;
+  border-radius: 5px;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .buttonDisplay {
@@ -101,6 +110,8 @@ header {
   flex-direction: column;
   justify-content: center;
   gap: 6px;
+  flex: 1;
+  justify-content: flex-start;
 }
 
 .buttonDisplay button svg {
@@ -115,11 +126,56 @@ nav > div {
 }
 
 /* ========================================
+   THEME CONTROL
+======================================== */
+
+.sidebar .nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.theme-section {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--card-border);
+}
+
+#themeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.moon-icon {
+  display: block;
+}
+
+.sun-icon {
+  display: none;
+}
+
+/* Light Theme */
+[data-theme="light"] .moon-icon {
+  display: none;
+}
+
+[data-theme="light"] .sun-icon {
+  display: block;
+}
+
+/* ========================================
    5. COLLAPSIBLE SIDEBAR
 ======================================== */
 
 .app-layout.collapsed {
-  grid-template-columns: minmax(0, 1fr) 64px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  transition: 0.5s ease;
 }
 
 .app-layout.collapsed .sidebar nav button span {
@@ -160,8 +216,8 @@ nav > div {
   min-height: 70px;
 }
 .system-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.30) ;
-  transition: 0.5s ease ;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: 0.5s ease;
 }
 #system-cards {
   display: grid;
@@ -185,13 +241,53 @@ nav > div {
    7. Charts
 ======================================== */
 .chart-container {
+  position: relative;
+  width: 100%;
   padding: 15px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+.chart-area {
+  position: relative;
+  width: 100%;
   height: 180px;
 }
 .chart-container h3 {
   display: flex;
   justify-content: start;
   font-size: 1.5em;
+}
+.recent-file {
+  width: 100%;
+  background-color: rgba(23, 37, 54, 0.78);
+  min-height: 180px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 140, 170, 0.22);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.recent-file button {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  border-bottom: 2px solid rgba(100, 140, 170, 0.22);
+}
+.parent-file {
+  margin-top: 40px;
+  display: flex;
+  padding: 15px;
+  gap: 16px;
+}
+#arrow {
+  transition: transform 0.3s ease;
+}
+.rotated {
+  transform: rotate(180deg);
+}
+.collapsed-file{
+  min-height: 400px;
 }
 
 .card-icon {
@@ -264,7 +360,7 @@ nav > div {
   );
   background-size: 200% 200%;
   animation: gradient-shift 8s ease alternate infinite;
-  overflow: hidden;
+  overflow: auto;
 }
 
 @keyframes gradient-shift {

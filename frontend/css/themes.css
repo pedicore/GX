@@ -1,64 +1,79 @@
-
 /* Default Theme: Dark */
 :root {
-    --bg-primary: #111827;
-    --bg-secondary: #1e293b;
-    --bg-secondary-Alpha: rgb(30, 41, 59 , 0.3) ;
-    --text-primary: #f8fafc;
-    --accent: #38bdf8;
+  --bg-primary: #111827;
+  --bg-secondary: #1e293b;
+  --bg-secondary-Alpha: rgb(30, 41, 59, 0.3);
+  --text-primary: #f8fafc;
+  --accent: #38bdf8;
+  --bg-files: rgba(23, 37, 54, 0.78);
+  --files-border: rgba(100, 140, 170, 0.22);
 
-    /* Buttons */
-    --btn-bg: #273449;
-    --btn-text: #cbd5e1;
-    --btn-text-hover: #f8fafc;
-    --btn-text-active: #38bdf8;
-    --btn-hover: #334155;
-    --btn-active: #164e63;
+  /* Buttons */
+  --btn-bg: #273449;
+  --btn-text: #cbd5e1;
+  --btn-text-hover: #f8fafc;
+  --btn-text-active: #38bdf8;
+  --btn-hover: #334155;
+  --btn-active: #164e63;
 
-    /* Cards */
-    --card-border: #334155;
+  /* Cards */
+  --card-border: #334155;
 
-    /* Gradient colors */
-    --gradient-color-first:#071A1F;
-    --gradient-color-second:#12343B;
-    --gradient-color-third:#0B1826;
-
+  /* Gradient colors */
+  --gradient-color-first: #071a1f;
+  --gradient-color-second: #12343b;
+  --gradient-color-third: #0b1826;
 }
 
 /* Light Theme */
 [data-theme="light"] {
-    --bg-primary: #f1f5f9;
-    --bg-secondary: #ffffff;
-    --text-primary: #0f172a;
-    --accent: #2563eb;
+  --bg-primary: #f1f5f9;
+  --bg-secondary-Alpha: rgba(255, 255, 255, 0.75);
+  --bg-secondary: #ffffff;
+  --text-primary: #0f172a;
+  --accent: #2563eb;
+  --bg-files: rgba(255, 255, 255, 0.65);
+  --files-border: rgba(148, 163, 184, 0.45);
 
-    /* Buttons */
-    --btn-bg: #e2e8f0;
-    --btn-text: #334155;
-    --btn-text-hover: #0f172a;
-    --btn-text-active: #1d4ed8;
-    --btn-hover: #cbd5e1;
-    --btn-active: #dbeafe;
+  /* Buttons */
+  --btn-bg: #e2e8f0;
+  --btn-text: #334155;
+  --btn-text-hover: #0f172a;
+  --btn-text-active: #1d4ed8;
+  --btn-hover: #cbd5e1;
+  --btn-active: #dbeafe;
 
-    /* Cards */
-    --card-border: #cbd5e1;
+  /* Cards */
+  --card-border: #cbd5e1;
+  /* Gradient colors */
+  --gradient-color-first: #f8fafc;
+  --gradient-color-second: #e2e8f0;
+  --gradient-color-third: #dbeafe;
 }
 
 /* Midnight Theme */
 [data-theme="midnight"] {
-    --bg-primary: #090b10;
-    --bg-secondary: #161b22;
-    --text-primary: #e6edf3;
-    --accent: #0ea5e9;
+  --bg-primary: #090b10;
+  --bg-secondary-Alpha: rgba(22, 27, 34, 0.65);
+  --bg-secondary: #161b22;
+  --text-primary: #e6edf3;
+  --accent: #0ea5e9;
+  --bg-files: rgba(17, 25, 35, 0.78);
+  --files-border: rgba(85, 110, 145, 0.25);
 
-    /* Buttons */
-    --btn-bg: #21262d;
-    --btn-text: #c9d1d9;
-    --btn-text-hover: #ffffff;
-    --btn-text-active: #38bdf8;
-    --btn-hover: #30363d;
-    --btn-active: #0c3547;
+  /* Buttons */
+  --btn-bg: #21262d;
+  --btn-text: #c9d1d9;
+  --btn-text-hover: #ffffff;
+  --btn-text-active: #38bdf8;
+  --btn-hover: #30363d;
+  --btn-active: #0c3547;
 
-    /* Cards */
-    --card-border: #30363d;
+  /* Cards */
+  --card-border: #30363d;
+  /* Gradient colors */
+
+  --gradient-color-first: #090b10;
+  --gradient-color-second: #151d32;
+  --gradient-color-third: #0b1826;
 }

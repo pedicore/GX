@@ -15,16 +15,17 @@ add_executable(GX
     src/main.cpp
     src/WebViewManager.cpp
     src/PasswordManager.cpp
-    src/GXRecordManager.cpp)
+    src/GXRecordManager.cpp
+    src/UUIDGenerator.cpp)
 
 
 target_include_directories(GX PRIVATE include)
-target_link_libraries(GX PRIVATE Qt6::Widgets SQLite3::SQLite3)
-
+target_link_libraries(GX PRIVATE Qt6::Widgets SQLite3::SQLite3 Rpcrt4)
 
 add_executable(SQLiteTest src/SQLiteTest.cpp)
+add_executable(UUIDTest src/UUIDTest.cpp)
 target_link_libraries(SQLiteTest PRIVATE SQLite3::SQLite3)
-
+target_link_libraries(UUIDTest  PRIVATE Rpcrt4)
 
 
 

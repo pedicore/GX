@@ -8,6 +8,8 @@
 #include <string>
 #include <system_error>
 
+#include "UUIDGenerator.h"
+
 PasswordManager::PasswordManager(std::string const& p, std::string const& n,
                                  std::string const& file_p,
                                  std::string const& t)
@@ -49,16 +51,7 @@ void PasswordManager::set_notes(const std::string& set_notes) {
 }
 
 // other - functions
-std::string PasswordManager::generate_id() {
-  std::string id_alphabet_pool =
-      "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  std::string id_generated;
-  for (int i = 0; i < 12; i++) {
-    int n = std::rand() % 62;
-    id_generated += id_alphabet_pool[n];
-  }
-  return id_generated;
-}
+std::string PasswordManager::generate_id() { return generateUUID(); }
 bool PasswordManager::file_exists() const {
   std::error_code ec;
   bool result = std::filesystem::exists(filepath, ec);
